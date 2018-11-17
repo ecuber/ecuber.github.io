@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PokeTracker</title>
+</head>
+
+<body>
+<p id="para">Hi there, nerd.</p>
+<button onclick="changeColor('blue');">blue</button>
+<button onclick="changeColor('red');">red</button>
+<button onclick="changeColor('orange');">orange</button>
+<button onclick="changeColor('green');">green</button>
+<button onclick="changeColor('purple');">purple</button>
+<script>
+// function addPokemon() {
+//   const pokedex = require("./pokemon.json");
+//   let pokeType = prompt("Please enter the pokemon type.", "Type").toLowerCase().trim();
+//   if(pokedex.includes(pokeType)) {
+//     let pokeName = prompt("Please enter the pokemon name.", "Name").toLowerCase().trim();
+//     pokedex[pokeType].push(pokeName);
+//     await writeFile("./pokemon.json", JSON.stringify(pokedex, null, 4);
+// }
+// }
+function changeColor(newColor) {
+  var elem = document.getElementById('para');
+  elem.style.color = newColor;
+}
+</script>
+<!-- <h1>PokeTracker</h1>
+<button onclick="">Add Pokemon</button> -->
+</body>
+
+</html>
