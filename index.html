@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PokeTracker</title>
-</head>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<title>id8el</title>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #2e3744;
+    line-height: 1.8;
+    background-color: lightgray;
+    text-align: center;
+}
+button {
+  font-family: "Lato", sans-serif;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 2em;
+}
+</style>
 <body>
-<p id="para">Hi there, nerd.</p>
-<button onclick="changeColor('blue');">blue</button>
-<button onclick="changeColor('red');">red</button>
-<button onclick="changeColor('orange');">orange</button>
-<button onclick="changeColor('green');">green</button>
-<button onclick="changeColor('purple');">purple</button>
+<h1 id="para">Hello Everyone!</h1>
+<button style="background-color:red"onclick="changeColor('red');">red</button>
+<button style="background-color:orange"onclick="changeColor('orange');">orange</button>
+<button style="background-color:green" onclick="changeColor('green');">green</button>
+<button style="background-color:blue" onclick="changeColor('blue');">blue </button>
+<button style="background-color:purple" onclick="changeColor('purple');">purple</button>
 <script>
-// function addPokemon() {
-//   const pokedex = require("./pokemon.json");
-//   let pokeType = prompt("Please enter the pokemon type.", "Type").toLowerCase().trim();
-//   if(pokedex.includes(pokeType)) {
-//     let pokeName = prompt("Please enter the pokemon name.", "Name").toLowerCase().trim();
-//     pokedex[pokeType].push(pokeName);
-//     await writeFile("./pokemon.json", JSON.stringify(pokedex, null, 4);
-// }
-// }
 function changeColor(newColor) {
   var elem = document.getElementById('para');
   elem.style.color = newColor;
 }
 </script>
-<!-- <h1>PokeTracker</h1>
-<button onclick="">Add Pokemon</button> -->
 </body>
-
 </html>
