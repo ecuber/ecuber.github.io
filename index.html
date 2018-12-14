@@ -3,15 +3,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<title>id8el</title>
+<title>CRLS XC Routes</title>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
     height: 100%;
     color: #2e3744;
     line-height: 1.8;
-    background-color: lightgray;
+    background-color: white;
     text-align: center;
+}
+h2, html {
+  text-align: left;
+}
+p, html {
+  height: 100%;
+  color: #2e3744;
+  line-height: 1.8;
+  background-color: white;
+  text-align: center;
+  font-size: 18
 }
 button {
   font-family: "Lato", sans-serif;
@@ -24,19 +35,40 @@ button {
   font-size: 16px;
   border-radius: 2em;
 }
+ul {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #555;
+  color: white;
+}
 </style>
 <body>
-<h1 id="para">Hello Everyone!</h1>
-<button style="background-color:red"onclick="changeColor('red');">red</button>
-<button style="background-color:orange"onclick="changeColor('orange');">orange</button>
-<button style="background-color:green" onclick="changeColor('green');">green</button>
-<button style="background-color:blue" onclick="changeColor('blue');">blue </button>
-<button style="background-color:purple" onclick="changeColor('purple');">purple</button>
+<h1 id="titl">Cambridge XC/Track Routes</h1>
+<br>
+<h3>Click on a link below to view the routes the CRLS cross country and track teams run for training!</h3>
+<br>
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="warmup.html">Warm Up</a></li>
+  <li><a href="recovery.html">Recovery</a></li>
+  <li><a href="longrun.html">Long Run</a></li>
+</ul>
+<br>
 <script>
-function changeColor(newColor) {
-  var elem = document.getElementById('para');
-  elem.style.color = newColor;
-}
 </script>
 </body>
 </html>
