@@ -65,8 +65,15 @@
         ]);
 
         var options = {
-          chart: {
-            title: "Phase Change Graph",
+          title: "Phase Change Graph",
+          fontName: "PT Sans",
+          hAxis: {
+            title: "Q | Heat added (J)",
+            fontName: "PT Sans"
+          },
+          vAxis: {
+            title: "T | Temperature (°C)",
+            fontName: "PT Sans"
           },
           width: 900,
           height: 500
@@ -86,7 +93,7 @@
     <button onclick="drawChart()">Click to start chart generation.</button>
     <div id="linechart" style="width:900; height:500"></div>
     <div class="footer">
-      Developed by Elijah Sippel
+      Developed by Elijah Sippel.<br><br>Water example: [2, 334, 2230, -50, 120, 100, 0, 4186]
     </div>
   </body>
 
