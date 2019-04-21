@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Loads the API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script type="text/javascript">
+      // Load the Google Visualization API and corechart package
+      google.charts.load('current', {'packages':['corechart', 'line']});
+
+      // Set a callback to run whenever the Google Visualization API is loaded.
+      // google.charts.setOnLoadCallback(drawChart);
+
+      function getProperties()
+      {
+        // props[0] = Mass
+        // props[1] = Latent heat of fusion
+        // props[2] = Latent heat of vaporization
+        // props[3] = Initial temperature
+        // props[4] = Final temperature
+        // props[5] = Boiling temperature
+        // props[6] = Freezing temperature
+        // props[7] = specific heat capacity
+
+        var props = [
+          parseFloat(prompt("Enter the mass in kg")),
+          parseFloat(prompt("Enter the latent heat of fusion in J/kg")),
+          parseFloat(prompt("Enter the latent heat of vaporization in J/kg")),
+          parseFloat(prompt("Enter the initial temperature in degrees Celsius")),
+          parseFloat(prompt("Enter the final temperature in degrees Celsius")),
+          parseFloat(prompt("Enter the boiling temperature in degrees Celsius")),
+          parseFloat(prompt("Enter the freezing temperature in degrees Celsius")),
+          parseFloat(prompt("Enter the specific heat capacity in J/kg"))
+        ];
+        // Water example
+        // var props = [2, 334, 2230, -50, 120, 100, 0, 4186];
+        return props;
+      }
+
+      // Callback that creates and populates a data table,
+      // instantiates the chart, passes in the data, and draws it.
+      function drawChart() {
+        var props = getProperties();
+        // console.log(props);
+
+        var m = props[0];
+        var lf = props[1];
+        var lv = props[2];
+        var ti = props[3];
+        var tf = props[4];
+        var boil = props[5];
+        var freeze = props[6];
+        var c = props[7];
+
+        var freezeQ = m * lf;
+        var vapoQ = m * lv;
+        var finalQ =  (m * (c / 1000) * (tf - boil)) + vapoQ + lv;
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Q added (J)');
+        data.addColumn('number', 'T  (°C)');
+        data.addRows([
+          [0, ti], [freezeQ, freeze], [freezeQ + lf, freeze],
+          [vapoQ, boil], [vapoQ + lv, boil], [finalQ, tf]
+        ]);
+
+        var options = {
+          chart: {
+            title: "Phase Change Graph",
+          },
+          width: 900,
+          height: 500
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('linechart'));
+
+        chart.draw(data, google.charts.Line.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Graphing Phase Changes</h1>
+    <p><br>
+      Please note that due to the early release state of this site, the initial temperature you input must be less than the freezing temperature. As a result, all graphs will show the substance starting as a solid, and moving towards being a liquid.
+    </p1><br><br>
+    <button onclick="drawChart()">Click to start chart generation.</button>
+    <div id="linechart" style="width:900; height:500"></div>
+    <div class="footer">
+      Developed by Elijah Sippel
+    </div>
+  </body>
+
+  <style>
+    body {
+      background-color: #36393E;
+    }
+
+    h1 {
+      font-family: 'PT Sans', sans-serif;
+      color: white;
+      font-size: 32px;
+      text-align: center;
+    }
+    p {
+      font-family: 'PT Sans', sans-serif;
+      color: white;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #36393E;
+      color: white;
+      text-align: left;
+      font-family: 'PT Sans', sans-serif;
+      font-size: 18px;
+    }
+
+    </style>
+</html>
