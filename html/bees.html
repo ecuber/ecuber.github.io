@@ -8,7 +8,7 @@
 </head>
 <body>
     <p>
-        <a onclick="copy()" class="bouncy button">Copy The Bees</a>
+        <a onclick="copy()" class="bouncy button" id="button">Copy The Bees</a>
         <br>
         <label for="scripty"></label><textarea id="scripty"></textarea>
     </p>
@@ -17,14 +17,13 @@
 
 <script>
     function copy() {
-        let text = document.getElementById("scripty").innerText;
-        let elem = document.createElement("textarea");
-        document.body.appendChild(elem);
-        elem.value = text;
-        elem.select();
-        document.execCommand("copy");
-        document.body.removeChild(elem);
-        alert("you now wield unlimited power");
+        let text = document.getElementById("scripty").innerHTML;
+        navigator.clipboard.writeText(text).then(function() {
+            console.log('Async: Copying to clipboard was successful!');
+            document.getElementById("button").textContent = "Copied!"
+        }, function(err) {
+            console.error('Async: Could not copy text: ', err);
+        });
     }
 
     function load() {
