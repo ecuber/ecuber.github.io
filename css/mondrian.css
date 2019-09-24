@@ -1,0 +1,91 @@
+.painting {
+    background-color: #fff4db;
+    width: 400px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px 10px 0 #8d8d8d;
+}
+
+.bigbox {
+    width: 270px;
+    height: 270px;
+}
+
+.mediumbox {
+    width: 120px;
+    height: 130px;
+}
+
+.div1 {
+    width: 10px;
+    height: 270px;
+}
+
+.smalldiv {
+    width: 120px;
+    height: 10px;
+}
+
+.midrow {
+    height: 10px;
+    width: 400px;
+}
+
+.bottombox {
+    width: 120px;
+    height: 120px;
+}
+
+.verticaldiv {
+    height: 120px;
+    width: 10px;
+}
+
+.longbox {
+    height: 120px;
+    width: 190px;
+}
+
+.bottomright {
+    width: 70px;
+    height: 120px;
+}
+
+.tinybox {
+    width: 70px;
+    height: 55px;
+}
+
+.tinydiv {
+    width: 70px;
+    height: 10px;
+}
+
+.dark {
+    background-color: #2a2739
+}
+
+.red {
+    background-color: #c62722;
+}
+
+.blue {
+    background-color: #4a80e9;
+}
+
+.yellow {
+    background-color: #e5e955;
+}
+/*
+    Reminded Jesse to float some elements to the right.
+ */
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}

@@ -1,0 +1,72 @@
+/*
+Miles gave feedback on my css design.
+ */
+
+body {
+    background-color: #282D3D;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 14px;
+    color: #e3e3e3;
+    width: 50%;
+    max-width: 620px;
+    margin: auto;
+    /* Helped Jesse change the width of the page */
+}
+
+h1 {
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: #e5e5e5;
+    background-color: #202331;
+    background-size: auto;
+}
+
+h2 {
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 16px;
+    color: #d4d4d4;
+}
+
+a:link {
+    color: aquamarine;
+}
+
+a:visited {
+    color: aqua;
+}
+
+hr {
+    background-color: #d4d4d4;
+    width: 100%;
+    height: 1px;
+}
+
+/*
+Helped Jesse center his table.
+ */
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+table, th, td {
+    text-align: center;
+    border: 2px solid #e5e5e5;
+    padding: 5px;
+}
+
+div.container {
+    width: 610px;
+}
+
+img.fright {
+    float: right;
+    width: auto;
+    margin: 20px auto 10px;
+}
+
+img.center {
+    display: block;
+    margin: 0 auto;
+}

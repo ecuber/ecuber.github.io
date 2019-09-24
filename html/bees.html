@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/crap.css">
+    <meta charset="UTF-8">
+    <title>BEES</title>
+</head>
+<body>
+    <p>
+        <a onclick="copy()" class="bouncy button">Copy The Bees</a>
+        <br>
+        <label for="scripty"></label><textarea id="scripty"></textarea>
+    </p>
+</body>
+
+
+<script>
+    function copy() {
+        let text = document.getElementById("scripty").innerText;
+        let elem = document.createElement("textarea");
+        document.body.appendChild(elem);
+        elem.value = text;
+        elem.select();
+        document.execCommand("copy");
+        document.body.removeChild(elem);
+        alert("you now wield unlimited power");
+    }
+
+    function load() {
+        let txtFile = new XMLHttpRequest();
+        txtFile.open("GET", "../media/bees.txt", true);
+        txtFile.onreadystatechange = function() {
+            if (txtFile.readyState === 4) {  // Makes sure the document is ready to parse.
+                if (txtFile.status === 200) {  // Makes sure it's found the file.
+                    allText = txtFile.responseText;
+                    //lines = txtFile.responseText.split("\n"); // Will separate each line into an array
+                    let customTextElement = document.getElementById('scripty');
+                    customTextElement.innerHTML = txtFile.responseText;
+                }
+            }
+        }
+        txtFile.send(null);
+    }
+    window.onLoad = load();
+</script>
+</html>
